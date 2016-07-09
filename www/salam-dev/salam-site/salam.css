@@ -1,0 +1,11 @@
+#mu-slider .mu-slider-area .mu-top-slider .mu-top-slider-single .mu-top-slider-content .mu-slider-small-title{
+    text-shadow: -3px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#mu-slider .mu-slider-area .mu-top-slider .mu-top-slider-single .mu-top-slider-content .mu-slider-title{
+    text-shadow: -3px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#mu-slider .mu-slider-area .mu-top-slider .mu-top-slider-single:after{
+    background-color: rgba(0, 0, 0, 0.2);
+}
