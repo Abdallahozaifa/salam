@@ -9,7 +9,9 @@ var bodyParser = require('body-parser');
 var fs = require('fs');
 var app = express();
 var root = __dirname;
+var sms = require("./textMessage.js");
 
+sms.sendSMS("Yo Whats up Homie, testing for life!!");
 ////////////
 /* CONFIG */
 ////////////
@@ -21,10 +23,10 @@ app.set('port', (process.env.PORT || 8080));
 //////////////
 
 app.use('/assets', express.static(root + '/www/salam-dev/salam-site/assets'));
-app.use('/style.css' , express.static(root + '/www/salam-dev/salam-site/style.css'));
-app.use('/404.html' , express.static(root + '/www/salam-dev/salam-site/404.html'));
-app.use('/index.html' , express.static(root + '/www/salam-dev/salam-site/index.html'));
-app.use('/salam.css' , express.static(root + '/www/salam-dev/salam-site/salam.css'));
+app.use('/style.css', express.static(root + '/www/salam-dev/salam-site/style.css'));
+app.use('/404.html', express.static(root + '/www/salam-dev/salam-site/404.html'));
+app.use('/index.html', express.static(root + '/www/salam-dev/salam-site/index.html'));
+app.use('/salam.css', express.static(root + '/www/salam-dev/salam-site/salam.css'));
 
 
 // parse application/x-www-form-urlencoded 

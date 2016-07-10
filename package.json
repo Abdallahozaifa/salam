@@ -1,7 +1,7 @@
 {
-  "name": "spartaaaaaa",
+  "name": "salam-restaurant",
   "version": "1.0.0",
-  "description": "defeating foes left and right",
+  "description": "salam restaurant site",
   "main": "app.js",
   "scripts": {
     "test": "mocha test/test.js"
