@@ -11,7 +11,7 @@ var app = express();
 var root = __dirname;
 var sms = require("./textMessage.js");
 
-sms.sendSMS("Yo Whats up Homie, testing for life!!");
+//sms.sendSMS("Yo Whats up Homie, testing for life!!");
 ////////////
 /* CONFIG */
 ////////////
@@ -50,6 +50,13 @@ app.get('/', function(req, res) {
     });
 });
 
+app.post('/reservation', function(req,res){
+    var customerReservation = req.body;
+    console.log(customerReservation);
+    sms.sendSMS(customerReservation);
+    
+    res.send("Message was received!");
+});
 
 ////////////
 /* LISTEN */

@@ -22,7 +22,7 @@
      * text message namespace
      *
      */
-    pub.sendSMS = function(message) {
+    pub.sendSMS = function(customerReservationInfo) {
 
         /* Callback function that will execute after a response returns */
         this.callback = function(error, message) {
@@ -41,15 +41,24 @@
                 console.log(message.dateCreated);
             }
             else {
-                console.log('Oops! There was an error.');
+                console.log(error.message);
             }
         };
-
+        
+        /* Creates a template message for the customer to be sent to salam */
+        var templateMessage = function(customerReservationInfo) {
+            var line1 = customerReservationInfo.fullname + " has reserved for " + customerReservationInfo.numOfPerson + " on " + customerReservationInfo.date + "\n";
+            var line2 = "Message: " + customerReservationInfo.message + "\n";
+            var line3 = "Call " + customerReservationInfo.phoneNumber + " to verify.";
+            
+            return line1 + line2 + line3;
+        };
+        
         /* SMS configuration */
         this.config = {
             to: SALAM_NUMBER,
             from: TWILIO_NUMBER,
-            body: message
+            body: templateMessage(customerReservationInfo)
         };
 
 
