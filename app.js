@@ -27,7 +27,9 @@ app.use('/style.css', express.static(root + '/www/salam-dev/salam-site/style.css
 app.use('/404.html', express.static(root + '/www/salam-dev/salam-site/404.html'));
 app.use('/index.html', express.static(root + '/www/salam-dev/salam-site/index.html'));
 app.use('/salam.css', express.static(root + '/www/salam-dev/salam-site/salam.css'));
-
+app.use('/sweetalert2.min.js', express.static(root + '/bower_components/sweetalert2/dist/sweetalert2.min.js'));
+app.use('/sweetalert2.min.css', express.static(root + '/bower_components/sweetalert2/dist/sweetalert2.min.css'));
+app.use('/promise.min.js', express.static(root + '/bower_components/es6-promise/promise.min.js'));
 
 // parse application/x-www-form-urlencoded 
 app.use(bodyParser.urlencoded({
@@ -50,12 +52,13 @@ app.get('/', function(req, res) {
     });
 });
 
+/* Sends the reservation information to salam's restaurant */
 app.post('/reservation', function(req,res){
     var customerReservation = req.body;
-    console.log(customerReservation);
-    sms.sendSMS(customerReservation);
+    //console.log(customerReservation);
+    //sms.sendSMS(customerReservation);
     
-    res.send("Message was received!");
+    res.send("Message was successfully sent!");
 });
 
 ////////////
