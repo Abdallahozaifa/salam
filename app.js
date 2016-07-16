@@ -61,6 +61,13 @@ app.post('/reservation', function(req,res){
     res.send("Message was successfully sent!");
 });
 
+/* Sends the contact information to salam's restaurant */
+app.post('/contact', function(req, res){
+    var contactInfo = req.body;
+    console.log(contactInfo);
+    res.send("Message was successfully sent!");
+});
+
 ////////////
 /* LISTEN */
 ////////////

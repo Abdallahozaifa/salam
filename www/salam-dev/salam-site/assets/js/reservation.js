@@ -1,6 +1,6 @@
 /* global $, swal */
 /* Reservation Class */
-var reservation = {
+var Reservation = {
 
     /* Reservation Components*/
     fullname: null,
@@ -46,22 +46,22 @@ var reservation = {
             case this.numOfPerson.val():
                 console.log("Num Of person!");
                 infoCorrect = false;
-                this.numOfPerson.val();
+                this.numOfPerson.val("");
                 break;
             case this.date.val():
                 console.log("date!");
                 infoCorrect = false;
-                this.date.val();
+                this.date.val("");
                 break;
             case this.phoneNumber2.val():
                 console.log("PhoneNumber2!");
                 infoCorrect = false;
-                this.phoneNumber2.val();
+                this.phoneNumber2.val("");
                 break;
             case this.message.val():
                 console.log("Message!");
                 infoCorrect = false;
-                this.message.val();
+                this.message.val("");
                 break;
         }
         
